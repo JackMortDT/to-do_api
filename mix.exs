@@ -1,10 +1,13 @@
 defmodule TodoApi.Umbrella.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/JackMortDT/to-do_api"
+  @version "0.1.0"
+
   def project do
     [
       apps_path: "apps",
-      version: "0.1.0",
+      version: @version,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
@@ -13,7 +16,9 @@ defmodule TodoApi.Umbrella.MixProject do
         flags: [:unmatched_returns, :error_handling, :underspecs, :unknown],
         ignore_warnings: ".dialyzer_ignore.exs",
         list_unused_filters: true
-      ]
+      ],
+      docs: docs(),
+      package: package()
     ]
   end
 
@@ -34,6 +39,14 @@ defmodule TodoApi.Umbrella.MixProject do
   defp aliases do
     [
       setup: ["cmd mix setup"]
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      source_url: @source_url,
+      source_ref: "v#{@version}"
     ]
   end
 

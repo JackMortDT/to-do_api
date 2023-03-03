@@ -11,7 +11,6 @@ defmodule TodoApiWeb.Router do
 
   # Enable Swoosh mailbox preview in development
   if Application.compile_env(:todo_api_web, :dev_routes) do
-
     scope "/dev" do
       pipe_through [:fetch_session, :protect_from_forgery]
 
