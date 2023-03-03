@@ -20,7 +20,7 @@ defmodule TodoApiWeb.HealthCheckController do
     |> halt()
   end
 
-  defp check_pg_health() do
+  defp check_pg_health do
     case Repo.query(@pg_check_query) do
       {:ok, _result} -> :ok
       _ -> raise "postgres health check failed for #{to_string(Repo)}"
