@@ -64,3 +64,25 @@ config :swoosh, :api_client, false
 # Set a higher stacktrace during development. Avoid configuring such
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
+
+# Git hooks configuration
+config :git_hooks,
+  auto_install: true,
+  verbose: true,
+  hooks: [
+    pre_commit: [
+      tasks: [
+        {:cmd, "mix format --check-formatted"}
+      ]
+    ],
+    pre_push: [
+      verbose: false,
+      tasks: [
+        {:cmd, "mix credo --strict"},
+        {:cmd, "mix test --color"},
+        {:cmd, "mix coveralls"},
+        {:cmd, "mix dialyzer"},
+        {:cmd, "echo 'success!'"}
+      ]
+    ]
+  ]
