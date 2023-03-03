@@ -37,7 +37,8 @@ defmodule TodoApi.Umbrella.MixProject do
       # test deps
       {:excoveralls, "~> 0.14.5", only: :test},
       {:ex_machina, "~> 2.7", only: :test},
-      {:faker, "~> 0.17", only: :test}
+      {:faker, "~> 0.17", only: :test},
+      {:mock, "~> 0.3.7", only: :test}
     ]
   end
 
@@ -51,7 +52,8 @@ defmodule TodoApi.Umbrella.MixProject do
     [
       main: "readme",
       source_url: @source_url,
-      source_ref: "v#{@version}"
+      source_ref: "v#{@version}",
+      logo: "assets/todo-logo.png"
     ]
   end
 
