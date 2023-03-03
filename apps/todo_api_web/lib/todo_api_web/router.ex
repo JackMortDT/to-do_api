@@ -5,6 +5,11 @@ defmodule TodoApiWeb.Router do
     plug :accepts, ["json"]
   end
 
+  # Health Routes
+  scope "/", TodoApiWeb do
+    get "/health", HealthCheckController, :run_health_checks
+  end
+
   scope "/api", TodoApiWeb do
     pipe_through :api
   end
