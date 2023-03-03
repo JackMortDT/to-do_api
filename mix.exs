@@ -12,6 +12,11 @@ defmodule TodoApi.Umbrella.MixProject do
       deps: deps(),
       aliases: aliases(),
       test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.html": :test
+      ],
       dialyzer: [
         flags: [:unmatched_returns, :error_handling, :underspecs, :unknown],
         ignore_warnings: ".dialyzer_ignore.exs",
