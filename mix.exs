@@ -36,7 +36,6 @@ defmodule TodoApi.Umbrella.MixProject do
       {:git_hooks, "~> 0.7.3", only: [:dev], runtime: false},
       # test deps
       {:excoveralls, "~> 0.14.5", only: :test},
-      {:ex_machina, "~> 2.7", only: :test},
       {:faker, "~> 0.17", only: :test},
       {:mock, "~> 0.3.7", only: :test}
     ]

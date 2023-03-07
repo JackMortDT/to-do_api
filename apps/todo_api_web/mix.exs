@@ -44,7 +44,9 @@ defmodule TodoApiWeb.MixProject do
       {:gettext, "~> 0.20"},
       {:todo_api, in_umbrella: true},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      # Test deps
+      {:ex_machina, "~> 2.7", only: :test}
     ]
   end
 
