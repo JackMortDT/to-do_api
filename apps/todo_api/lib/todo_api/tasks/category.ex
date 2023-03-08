@@ -7,14 +7,16 @@ defmodule TodoApi.Tasks.Category do
   import Ecto.Changeset
 
   alias TodoApi.Users.User
+  alias TodoApi.Tasks.Task
 
   @required ~w(name user_id)a
   @optional []
 
-  schema "category" do
+  schema "categories" do
     field :name, :string
 
     belongs_to :user, User
+    many_to_many :tasks, Task, join_through: "task_categories"
 
     timestamps()
   end

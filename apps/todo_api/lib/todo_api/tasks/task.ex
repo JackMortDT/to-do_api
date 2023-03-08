@@ -7,6 +7,7 @@ defmodule TodoApi.Tasks.Task do
   import Ecto.Changeset
 
   alias TodoApi.Users.User
+  alias TodoApi.Tasks.Category
 
   @required ~w(user_id)a
   @optional ~w(title description due_date completed)a
@@ -18,6 +19,7 @@ defmodule TodoApi.Tasks.Task do
     field :completed, :boolean, default: false
 
     belongs_to :user, User
+    many_to_many :categories, Category, join_through: "task_categories"
 
     timestamps()
   end
