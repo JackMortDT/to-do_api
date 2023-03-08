@@ -83,4 +83,6 @@ jobs:
       run: mix test
 
     - name: Run dialyzer
+      env:
+        MIX_ENV: dev
       run: mix dialyzer
