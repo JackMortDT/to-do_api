@@ -6,8 +6,8 @@ defmodule TodoApi.Tasks.Task do
   use TodoApi.Schema
   import Ecto.Changeset
 
-  alias TodoApi.Users.User
   alias TodoApi.Tasks.Category
+  alias TodoApi.Users.User
 
   @required ~w(user_id)a
   @optional ~w(title description due_date completed)a
