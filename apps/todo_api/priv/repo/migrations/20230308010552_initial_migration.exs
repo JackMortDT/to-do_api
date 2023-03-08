@@ -39,7 +39,7 @@ defmodule TodoApi.Repo.Migrations.InitialMigration do
 
     create table(:task_categories, primary_key: false) do
       add :task_id, references(:tasks, type: :uuid), null: false
-      add :category_id, references(:category, type: :uuid), null: false
+      add :category_id, references(:categories, type: :uuid), null: false
     end
 
     create table(:settings, primary_key: false) do
