@@ -6,6 +6,8 @@ defmodule TodoApi.Users.User do
   use TodoApi.Schema
   import Ecto.Changeset
 
+  alias TodoApi.Tasks.{Category, Task}
+
   @required ~w(username email)a
   @optional ~w(first_name last_name)a
 
@@ -14,6 +16,9 @@ defmodule TodoApi.Users.User do
     field :email, :string
     field :first_name, :string
     field :last_name, :string
+
+    has_many :tasks, Task
+    has_many :categories, Category
 
     timestamps()
   end

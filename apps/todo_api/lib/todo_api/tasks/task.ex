@@ -8,7 +8,7 @@ defmodule TodoApi.Tasks.Task do
 
   alias TodoApi.Users.User
 
-  @required []
+  @required ~w(user_id)a
   @optional ~w(title description due_date completed)a
 
   schema "tasks" do
