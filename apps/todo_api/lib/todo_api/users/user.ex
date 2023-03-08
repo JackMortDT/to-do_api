@@ -20,8 +20,8 @@ defmodule TodoApi.Users.User do
 
   @type t() :: %User{}
 
-  def changeset(attrs) do
-    %User{}
+  def changeset(%User{} = user, attrs) do
+    user
     |> cast(attrs, @optional ++ @required)
     |> validate_required(@required)
   end
