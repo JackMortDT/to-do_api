@@ -47,6 +47,8 @@ defmodule TodoApi.Repo.Migrations.InitialMigration do
       add :theme, :string
       add :notifications, :boolean
 
+      add :user_id, references(:users, type: :uuid), null: false
+
       timestamps()
     end
   end
