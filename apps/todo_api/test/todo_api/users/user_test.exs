@@ -30,5 +30,20 @@ defmodule TodoApi.Users.UserTest do
 
       refute changeset.valid?
     end
+
+    test "fails when email has incorrect format" do
+      params = %{
+        email: "wrong_email",
+        username: Faker.Internet.user_name()
+      }
+
+      %Ecto.Changeset{} = changeset = User.changeset(%User{}, params)
+
+      error = {:email, {"has invalid format", [validation: :format]}}
+
+      assert error in changeset.errors
+
+      refute changeset.valid?
+    end
   end
 end
