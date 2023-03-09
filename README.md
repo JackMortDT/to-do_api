@@ -4,6 +4,8 @@
 
 # To-todoo api 📝
 
+[![Coverage Status](https://coveralls.io/repos/github/JackMortDT/to-do_api/badge.svg?branch=master)](https://coveralls.io/github/JackMortDT/to-do_api?branch=master)
+
 To start your Phoenix server:
 
 -   Run mix setup to install and setup dependencies from apps
