@@ -5,6 +5,7 @@
 # To-todoo api 📝
 
 [![Coverage Status](https://coveralls.io/repos/github/JackMortDT/to-do_api/badge.svg?branch=master)](https://coveralls.io/github/JackMortDT/to-do_api?branch=master)
+![example workflow](https://github.com/JackMortDT/to-do_api/actions/workflows/elixir.yml/badge.svg)
 
 To start your Phoenix server:
 
