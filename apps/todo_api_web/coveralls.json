@@ -1,6 +1,5 @@
 {
     "skip_files": [
-        "test",
-        "lib/todo_api_web/*.*.ex"
+        "test"
     ]
 }
